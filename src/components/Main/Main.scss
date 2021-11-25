@@ -1,0 +1,19 @@
+@import "../globals.scss";
+
+.main_index {
+    padding: 0px;
+    background-color: $grey;
+}
+
+.product-title {
+    background-color: $grey;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    h1 {
+        font-family: $title-font;
+
+        margin: 10px;
+    }
+}

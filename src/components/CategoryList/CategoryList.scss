@@ -1,0 +1,13 @@
+@import "../globals.scss";
+
+.categories__list {
+    height: 100%;
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.categorias-list-link {
+    color: $orange;
+    text-decoration: none;
+    font-family: $title-font;
+}
