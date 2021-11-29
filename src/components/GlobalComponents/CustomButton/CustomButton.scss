@@ -1,0 +1,17 @@
+@import "../../globals.scss";
+
+.customButton {
+    color: $white;
+    background-color: $orange;
+    padding: 3px;
+    border: 2px solid $yellow;
+    width: 125px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 1rem;
+    &:hover {
+        background-color: $yellow;
+        color: $orange;
+        border: 2px solid $orange;
+    }
+}

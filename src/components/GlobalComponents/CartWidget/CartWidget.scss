@@ -1,0 +1,13 @@
+@import "../../globals.scss";
+
+#dropdownMenuButton1 {
+    background-color: $orange;
+}
+.dropdown-menu {
+    max-height: 200px;
+    width: 40vw;
+    overflow-y: scroll;
+    li {
+        width: 100%;
+    }
+}

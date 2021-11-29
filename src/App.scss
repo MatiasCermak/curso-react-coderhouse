@@ -1,6 +1,11 @@
 @import "~bootstrap/scss/bootstrap";
+@import "/src/components/globals.scss";
 
 * {
     padding: 0px;
     margin: 0px;
+}
+
+main {
+    background-color: $grey;
 }

@@ -1,0 +1,47 @@
+@import "../../globals.scss";
+
+.product-title {
+    background-color: $grey;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    h1 {
+        font-family: $title-font;
+
+        margin: 10px;
+    }
+}
+
+.product-list {
+    background-color: $grey;
+}
+
+.cards {
+    text-align: center;
+    transition: transform 0.5s;
+    margin: 5px;
+
+    a {
+        text-decoration-line: none;
+
+        p {
+            position: relative;
+            font-family: $text-font;
+            color: $orange;
+            background-color: $yellow;
+            margin: 0px;
+            height: 55px;
+        }
+
+        img {
+            width: 100%;
+            margin: 0px;
+            border-radius: 10px 10px 0px 0px;
+        }
+    }
+
+    &:hover {
+        transform: translate(-5px, -5px);
+    }
+}
