@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import "./ItemDetail.scss";
 import ItemCount from "../ItemCount/ItemCount";
 import CustomButton from "../../GlobalComponents/CustomButton/CustomButton";
+import Popover from "../../GlobalComponents/Popover/Popover";
 
 import { CartContext } from "../../../context/CartContext";
 
@@ -25,7 +26,9 @@ const ItemDetail = ({ item }) => {
             </div>
             <div class="row">
                 <div class="col-xs-12 col-xl-6">
-                    <img src={require("../../../img/" + item.image).default} alt="Foto album" />
+                    <Popover text={`Album ${item.title}`}>
+                        <img src={require("../../../img/" + item.image).default} alt="Foto album" />
+                    </Popover>
                 </div>
                 <div class="product_data col col-xs-12 col-xl-6 d-flex flex-column justify-content-center">
                     <div class="product_data__characteristics d-flex flex-column">

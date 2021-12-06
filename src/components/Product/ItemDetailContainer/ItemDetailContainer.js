@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 
 import ItemDetail from "../ItemDetail/ItemDetail";
 import "./ItemDetailContainer.scss";
@@ -227,7 +227,13 @@ const ItemDetailContainer = () => {
         });
     }, [id]);
 
-    return <main className="main_product">{item && <ItemDetail item={item} />}</main>;
+    return (
+        item && (
+            <main className="main_product">
+                <ItemDetail item={item} />
+            </main>
+        )
+    );
 };
 
 export default ItemDetailContainer;

@@ -1,0 +1,14 @@
+@import "../../globals.scss";
+
+.popover__container {
+    position: relative;
+}
+
+.popover__content {
+    background-color: $yellow;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    transform: translateX(50%);
+    margin: 0px 30px;
+}
