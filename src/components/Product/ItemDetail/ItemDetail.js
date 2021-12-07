@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import "./ItemDetail.scss";
 import ItemCount from "../ItemCount/ItemCount";
 import CustomButton from "../../GlobalComponents/CustomButton/CustomButton";
-import { Popover, PopoverTrigger, PopoverContent } from "../../GlobalComponents/Popover/Popover";
+import { Popover, PopoverTrigger } from "../../GlobalComponents/Popover/Popover";
 
 import { CartContext } from "../../../context/CartContext";
 
@@ -17,7 +17,6 @@ const ItemDetail = ({ item }) => {
         setItemQuantity(quantityToAdd);
         if (quantityToAdd !== 0) addItem({ item: item, quantity: quantityToAdd });
     };
-
     return (
         <div class="main_product__container container-fluid">
             <div class="row">

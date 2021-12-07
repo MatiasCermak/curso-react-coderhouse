@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 const Item = ({ element }) => {
+    console.log(element);
     return (
         <div className="col">
             <div className="cards">

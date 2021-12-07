@@ -2,9 +2,10 @@ import React, { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import CustomButton from "../../GlobalComponents/CustomButton/CustomButton";
 
 const Cart = () => {
-    const { cart, removeItem, totalQuantity, totalPurchase, isEmpty } = useContext(CartContext);
+    const { cart, removeItem, clearCart, totalPurchase, isEmpty } = useContext(CartContext);
 
     return isEmpty() ? (
         <div>
@@ -36,7 +37,14 @@ const Cart = () => {
             ))}
             <div className="cart__list-item row">
                 {" "}
-                <div className="col-12">Total: {totalPurchase()}</div>
+                <div className="col-6">Total: {totalPurchase()}</div>
+                {isEmpty() ? (
+                    ""
+                ) : (
+                    <div className="col-6 d-flex flex-row-reverse">
+                        <CustomButton text="Checkout" to="/checkout" handleClick={() => {}} />
+                    </div>
+                )}
             </div>
         </div>
     );

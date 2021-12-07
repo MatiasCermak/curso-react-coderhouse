@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import Cart from "../Cart/Cart";
+import CustomButton from "../../GlobalComponents/CustomButton/CustomButton";
+import { CartContext } from "../../../context/CartContext";
 
 const CartContainer = () => {
     return (
