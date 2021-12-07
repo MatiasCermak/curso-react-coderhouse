@@ -6,7 +6,7 @@ const ItemList = ({ products }) => {
     const { category } = useParams();
     let retProduct = products;
     if (category !== undefined) {
-        retProduct = retProduct.filter((element) => element.category[category]);
+        retProduct = retProduct.filter((element) => element.categories.includes(category));
     }
     return retProduct.map((element) => <Item element={element} key={element.id} />);
 };

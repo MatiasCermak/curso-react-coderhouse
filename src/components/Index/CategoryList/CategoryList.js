@@ -38,7 +38,7 @@ const CategoryList = () => {
                 </li>
                 <li className="categorias-list-item">
                     <NavLink
-                        to="/category/heavyMetal"
+                        to="/category/heavy-metal"
                         className={({ isActive }) =>
                             isActive ? "categorias-list-link-active" : "categorias-list-link"
                         }
@@ -78,7 +78,7 @@ const CategoryList = () => {
                 </li>
                 <li className="categorias-list-item">
                     <NavLink
-                        to="/category/hipHop"
+                        to="/category/hip-hop"
                         className={({ isActive }) =>
                             isActive ? "categorias-list-link-active" : "categorias-list-link"
                         }
