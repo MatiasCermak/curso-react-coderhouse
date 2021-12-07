@@ -4,10 +4,6 @@
     background-color: $orange;
 }
 .dropdown-menu {
-    max-height: 200px;
-    width: 40vw;
     overflow-y: scroll;
-    li {
-        width: 100%;
-    }
+    width: max-content;
 }

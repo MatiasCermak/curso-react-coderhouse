@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./NavBar.scss";
 import { MdMenu } from "react-icons/md";
 import CartWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../../context/CartContext";
 
 const NavBar = () => {
+    const { isEmpty } = useContext(CartContext);
     return (
         <header className="navbar navbar-expand-md shadow header">
             <div className="header__logo">
@@ -19,7 +21,7 @@ const NavBar = () => {
                     VinylRec
                 </Link>
             </div>
-            <CartWidget />
+            {isEmpty() ? "" : <CartWidget />}
             <button
                 className="navbar-toggler header__button"
                 type="button"

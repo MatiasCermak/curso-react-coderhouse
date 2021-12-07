@@ -6,9 +6,13 @@
 
 .popover__content {
     background-color: $yellow;
-    width: 100%;
     position: absolute;
-    top: 0px;
-    transform: translateX(50%);
-    margin: 0px 30px;
+    right: 0px;
+    z-index: 1000;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.popover__icon {
+    cursor: pointer;
 }

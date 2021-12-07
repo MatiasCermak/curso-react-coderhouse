@@ -9,7 +9,10 @@ const Popover = ({ text, children }) => {
     const stateSend = { state: contextState, setterFn: setContextState };
     return (
         <PopoverContext.Provider value={stateSend}>
-            <PopoverTrigger>{children}</PopoverTrigger>
+            <div className="popover__container">
+                <PopoverContent />
+                {children}
+            </div>
         </PopoverContext.Provider>
     );
 };
@@ -23,8 +26,9 @@ const PopoverTrigger = ({ children }) => {
         });
 
     return (
-        <div className="popover__container" onClick={handleClick}>
-            {children}
+        <div className="popover__trigger" onClick={handleClick}>
+            {" "}
+            {children}{" "}
         </div>
     );
 };
@@ -50,10 +54,10 @@ const PopoverCloseButton = () => {
         });
 
     return (
-        <div className="icon__container" onClick={handleClick}>
-            <AiFillCloseCircle />
+        <div className="popover__icon__container">
+            <AiFillCloseCircle className="popover__icon" onClick={handleClick} />
         </div>
     );
 };
 
-export default { Popover, PopoverTrigger };
+export { Popover, PopoverTrigger };

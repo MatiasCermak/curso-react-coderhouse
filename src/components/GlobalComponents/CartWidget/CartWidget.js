@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { MdShoppingCart } from "react-icons/md";
+import Cart from "../../Cart/Cart/Cart";
 import "./CartWidget.scss";
-
+import { CartContext } from "../../../context/CartContext";
 const CartWidget = () => {
+    const { totalQuantity } = useContext(CartContext);
+
     return (
         <div className="dropdown d-flex align-items-center">
             <button
@@ -12,9 +15,11 @@ const CartWidget = () => {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
             >
-                <MdShoppingCart />
+                <MdShoppingCart /> {totalQuantity()}
             </button>
-            <ul className="dropdown-menu" id="shopcart_list" aria-labelledby="dropdownMenuButton1"></ul>
+            <div className="dropdown-menu row " id="shopcart_list" aria-labelledby="dropdownMenuButton1">
+                <Cart />
+            </div>
         </div>
     );
 };

@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import "./ItemDetail.scss";
 import ItemCount from "../ItemCount/ItemCount";
 import CustomButton from "../../GlobalComponents/CustomButton/CustomButton";
-import Popover from "../../GlobalComponents/Popover/Popover";
+import { Popover, PopoverTrigger, PopoverContent } from "../../GlobalComponents/Popover/Popover";
 
 import { CartContext } from "../../../context/CartContext";
 
@@ -11,12 +11,11 @@ const ItemDetail = ({ item }) => {
 
     const { cart, addItem } = useContext(CartContext);
 
-    const handleAdd = () => {
-        if (itemQuantity !== 0) addItem({ item: item, quantity: itemQuantity });
-    };
+    const handleAdd = () => {};
 
     const onAdd = (quantityToAdd) => {
         setItemQuantity(quantityToAdd);
+        if (quantityToAdd !== 0) addItem({ item: item, quantity: quantityToAdd });
     };
 
     return (
@@ -27,7 +26,9 @@ const ItemDetail = ({ item }) => {
             <div class="row">
                 <div class="col-xs-12 col-xl-6">
                     <Popover text={`Album ${item.title}`}>
-                        <img src={require("../../../img/" + item.image).default} alt="Foto album" />
+                        <PopoverTrigger>
+                            <img src={require("../../../img/" + item.image).default} alt="Foto album" />{" "}
+                        </PopoverTrigger>
                     </Popover>
                 </div>
                 <div class="product_data col col-xs-12 col-xl-6 d-flex flex-column justify-content-center">
@@ -36,16 +37,14 @@ const ItemDetail = ({ item }) => {
                         <ul>
                             <li>Año: 1975</li>
                             <li>Género: Hola</li>
-                            <li>Artista: Hola</li>
+                            <li>Artista: {item.artist}</li>
                             <li>Rating: *****</li>
                             <li>Precio: {item.price}</li>
                         </ul>
                     </div>
                     <div class="product_data__description">
                         <h4>Descripción</h4>
-                        <p>
-                            {item.title} es un álbum de {item.artist}, con un puntaje de 5 estrellas.
-                        </p>
+                        <p>{item.description}</p>
                     </div>
                     <div class="product_data__buttons d-flex flex-column align-items-center">
                         {itemQuantity !== 0 ? (

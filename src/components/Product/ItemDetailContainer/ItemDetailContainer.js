@@ -227,13 +227,7 @@ const ItemDetailContainer = () => {
         });
     }, [id]);
 
-    return (
-        item && (
-            <main className="main_product">
-                <ItemDetail item={item} />
-            </main>
-        )
-    );
+    return <main className="main_product">{item && <ItemDetail item={item} />}</main>;
 };
 
 export default ItemDetailContainer;
