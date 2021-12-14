@@ -1,6 +1,7 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
 import "./CategoryList.scss";
+
+import { NavLink } from "react-router-dom";
+import React from "react";
 
 const CategoryList = () => {
     return (

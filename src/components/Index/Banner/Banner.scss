@@ -6,10 +6,13 @@
 
 .carousel-item__image {
     height: 400px;
+
     object-fit: cover;
 
     p {
+        font-size: 1.4rem;
         font-family: $title-font;
         color: $white;
+        white-space: nowrap;
     }
 }

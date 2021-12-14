@@ -14,13 +14,6 @@ $title-font: "Rubik Mono One", sans-serif;
 
 $text-font: "Montserrat", sans-serif;
 
-.expanded_body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    background-color: $grey;
-}
-
 @for $i from 1 through 3 {
     /*For the exercise*/
     .f-#{$i} {
@@ -32,4 +25,9 @@ $text-font: "Montserrat", sans-serif;
         background-size: cover;
         background-position: center;
     }
+}
+
+.progressbar {
+    position: relative;
+    top: 40vh;
 }

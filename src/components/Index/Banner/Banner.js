@@ -1,5 +1,6 @@
-import React from "react";
 import "./Banner.scss";
+
+import React from "react";
 
 const Banner = () => {
     return (
@@ -17,7 +18,7 @@ const Banner = () => {
                                     justify-content-center
                                 "
                         >
-                            <p class="fs-2">Esos grandes momentos</p>
+                            <p>Esos grandes momentos</p>
                         </div>
                     </div>
                     <div class="carousel-item" data-bs-interval="2000">
@@ -31,7 +32,7 @@ const Banner = () => {
                                     justify-content-center
                                 "
                         >
-                            <p class="fs-2">Vivilos otra vez</p>
+                            <p>Vivilos otra vez</p>
                         </div>
                     </div>
                     <div class="carousel-item" data-bs-interval="2000">
@@ -45,7 +46,7 @@ const Banner = () => {
                                     justify-content-center
                                 "
                         >
-                            <p class="fs-2">Con nosotros</p>
+                            <p>Con nosotros</p>
                         </div>
                     </div>
                 </div>

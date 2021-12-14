@@ -1,0 +1,46 @@
+@import "../../globals.scss";
+
+.main_help {
+    background-color: $grey;
+}
+
+.main_help__title {
+    font-family: $title-font;
+    margin: 20px;
+}
+
+.main_help__form {
+    margin: 30px;
+}
+
+.title {
+    font-family: $title-font;
+    font-size: 1.4rem;
+    margin: 1rem;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.form-check {
+    margin: 10px;
+}
+
+.form-check-input {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.form__btn {
+    background-color: $orange;
+    padding: 5px;
+    border: 2px solid $yellow;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.form__btn:hover {
+    background-color: $yellow;
+    color: $orange;
+}

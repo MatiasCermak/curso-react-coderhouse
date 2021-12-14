@@ -1,18 +1,26 @@
-import React, { useEffect, useState, useContext } from "react";
-import ItemDetail from "../ItemDetail/ItemDetail";
 import "./ItemDetailContainer.scss";
-import { useParams } from "react-router-dom";
-import { collection, getDoc, doc, query, where, documentId } from "firebase/firestore/lite";
+
+import React, { useEffect, useState } from "react";
+import { collection, doc, getDoc } from "firebase/firestore/lite";
+
+import CircularProgress from "react-cssfx-loading/lib/CircularProgress";
+import ItemDetail from "../ItemDetail/ItemDetail";
 import db from "../../../db";
+import { useParams } from "react-router-dom";
 
 const getItems = (index) => {
     const items = collection(db, "items");
-    return getDoc(doc(items, index)).then((res) => {
-        return {
-            id: res.id,
-            ...res.data(),
-        };
-    });
+    return getDoc(doc(items, index)).then(
+        (res) => {
+            return {
+                id: res.id,
+                ...res.data(),
+            };
+        },
+        () => {
+            alert("Hubo un error en la carga del producto, por favor intente de nuevo más tarde.");
+        }
+    );
 };
 
 const ItemDetailContainer = () => {
@@ -25,7 +33,17 @@ const ItemDetailContainer = () => {
         });
     }, [id]);
 
-    return <main className="main_product">{item && <ItemDetail item={item} />}</main>;
+    return (
+        <main className="main_product">
+            {item ? (
+                <ItemDetail item={item} />
+            ) : (
+                <div className="d-flex flex-column align-items-center justify-content-center">
+                    <CircularProgress className="progressbar" />
+                </div>
+            )}
+        </main>
+    );
 };
 
 export default ItemDetailContainer;

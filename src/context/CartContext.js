@@ -1,16 +1,28 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children, initialCart = [] }) => {
     const [cart, setCart] = useState(initialCart);
 
-    const isEmpty = () => cart.length == 0;
+    useEffect(() => {
+        let cartString = window.localStorage.getItem("vinylrec-cart-react");
+        if (cartString !== null && cartString !== "") {
+            setCart(JSON.parse(cartString));
+        }
+    }, []);
+
+    useEffect(() => {
+        window.localStorage.setItem("vinylrec-cart-react", JSON.stringify(cart));
+        console.log(cart);
+    }, [cart]);
+
+    const isEmpty = () => cart.length === 0;
 
     const addItem = (item) => {
-        if (isInCart(item.item.id)) removeItem(item.item.id);
-        setCart([...cart, item]);
-        console.log(cart);
+        console.log(item.item.id);
+        if (isInCart(item.item.id)) setCart([...cart.filter((element) => element.item.id !== item.item.id), item]);
+        else setCart([...cart, item]);
     };
 
     const removeItem = (id) => {

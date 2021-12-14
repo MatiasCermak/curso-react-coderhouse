@@ -1,10 +1,12 @@
-import React, { useContext, useState } from "react";
-import { Formik } from "formik";
 import * as Yup from "yup";
-import { collection, getDocs, query, writeBatch, Timestamp, addDoc, where, documentId } from "firebase/firestore/lite";
-import db from "../../db";
+
+import React, { useContext, useState } from "react";
+import { Timestamp, addDoc, collection, documentId, getDocs, query, where, writeBatch } from "firebase/firestore/lite";
+
 import { CartContext } from "../../context/CartContext";
 import CustomButton from "../GlobalComponents/CustomButton/CustomButton";
+import { Formik } from "formik";
+import db from "../../db";
 
 const buyerData = {
     name: "Matias Nicolas Cermak",
@@ -46,7 +48,7 @@ const postOrder = (cart, buyerData, totalPurchase, clearCart, setOrderCompleted,
         )
     ).then((res) => {
         res.docs.forEach((doc) => {
-            const itemToUpdate = cart.find((prod) => prod.item.id == doc.id);
+            const itemToUpdate = cart.find((prod) => prod.item.id === doc.id);
 
             if (doc.data().stock >= itemToUpdate.quantity) {
                 batch.update(doc.ref, {

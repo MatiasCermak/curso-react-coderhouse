@@ -1,9 +1,11 @@
-import React, { useContext } from "react";
 import "./NavBar.scss";
-import { MdMenu } from "react-icons/md";
+
+import React, { useContext } from "react";
+
+import { CartContext } from "../../../context/CartContext";
 import CartWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
-import { CartContext } from "../../../context/CartContext";
+import { MdMenu } from "react-icons/md";
 
 const NavBar = () => {
     const { isEmpty } = useContext(CartContext);
@@ -38,6 +40,9 @@ const NavBar = () => {
                 <ul className="navbar-nav">
                     <Link to="/" className="nav-link">
                         <li className="nav-item">Inicio</li>{" "}
+                    </Link>
+                    <Link to="/cart" className="nav-link">
+                        <li className="nav-item">Carrito</li>{" "}
                     </Link>
                     <Link to="/about" className="nav-link">
                         <li className="nav-item">Nosotros</li>

@@ -1,11 +1,13 @@
-import React, { useState } from "react";
 import "./ItemCount.scss";
+
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
-import useCounter from "../../../customHooks/useCounter";
+
 import CustomButton from "../../GlobalComponents/CustomButton/CustomButton";
+import React from "react";
+import useCounter from "../../../customHooks/useCounter";
 
 const ItemCount = ({ stock, initial, onAdd }) => {
-    const [count, increase, decrease, reset, setCount] = useCounter(initial);
+    const [count, increase, decrease] = useCounter(initial);
     const handleSubtract = () => {
         count > 0 && decrease();
     };

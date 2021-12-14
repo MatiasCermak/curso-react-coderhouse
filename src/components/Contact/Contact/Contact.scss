@@ -1,0 +1,34 @@
+@import "../../globals.scss";
+
+.form-contacto {
+    background-color: $grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 30px;
+}
+
+.form-items {
+    padding: 10px;
+    border: 0;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    width: 25%;
+    font-size: 1rem;
+}
+
+.items-text {
+    height: 50%;
+}
+
+.main_contact {
+    background-color: $grey;
+}
+
+.form-contacto-title {
+    text-align: center;
+    font-family: $title-font;
+    background-color: $grey;
+    padding: 10px;
+    margin: 0px;
+}

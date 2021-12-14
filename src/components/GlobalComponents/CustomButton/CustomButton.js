@@ -1,6 +1,6 @@
 import "./CustomButton.scss";
+
 import { Link } from "react-router-dom";
-import { JSXElementConstructor } from "react";
 
 const CustomButton = ({ text, handleClick, to }) => {
     const varButton = to !== undefined;

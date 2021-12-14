@@ -1,15 +1,16 @@
-import React, { useState, useContext } from "react";
 import "./ItemDetail.scss";
-import ItemCount from "../ItemCount/ItemCount";
-import CustomButton from "../../GlobalComponents/CustomButton/CustomButton";
+
 import { Popover, PopoverTrigger } from "../../GlobalComponents/Popover/Popover";
+import React, { useContext, useState } from "react";
 
 import { CartContext } from "../../../context/CartContext";
+import CustomButton from "../../GlobalComponents/CustomButton/CustomButton";
+import ItemCount from "../ItemCount/ItemCount";
 
 const ItemDetail = ({ item }) => {
     const [itemQuantity, setItemQuantity] = useState(0);
 
-    const { cart, addItem } = useContext(CartContext);
+    const { addItem } = useContext(CartContext);
 
     const handleAdd = () => {};
 
@@ -35,7 +36,7 @@ const ItemDetail = ({ item }) => {
                         <h4>Características</h4>
                         <ul>
                             <li>Año: 1975</li>
-                            <li>Género: Hola</li>
+                            <li>Género: {item.categories}</li>
                             <li>Artista: {item.artist}</li>
                             <li>Rating: *****</li>
                             <li>Precio: {item.price}</li>
@@ -45,11 +46,11 @@ const ItemDetail = ({ item }) => {
                         <h4>Descripción</h4>
                         <p>{item.description}</p>
                     </div>
-                    <div class="product_data__buttons d-flex flex-column align-items-center">
+                    <div class="product_data__buttons d-flex flex-column align-items-center justify-content-center">
                         {itemQuantity !== 0 ? (
                             <CustomButton text="Comprar" to="/cart" handleClick={handleAdd} />
                         ) : (
-                            <ItemCount initial={0} stock={20} onAdd={onAdd} />
+                            <ItemCount initial={0} stock={item.stock} onAdd={onAdd} />
                         )}
                     </div>
                 </div>

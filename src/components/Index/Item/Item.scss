@@ -1,0 +1,33 @@
+@import "../../globals.scss";
+
+.cards {
+    text-align: center;
+    transition: transform 0.5s;
+    margin: 5px;
+
+    a {
+        text-decoration-line: none;
+
+        p {
+            position: relative;
+            font-family: $text-font;
+            font-size: 1rem;
+            color: $orange;
+            background-color: $yellow;
+            margin: 0px;
+            height: 4rem;
+            border-radius: 0px 0px 10px 10px;
+            overflow: hidden;
+        }
+
+        img {
+            width: 100%;
+            margin: 0px;
+            border-radius: 10px 10px 0px 0px;
+        }
+    }
+
+    &:hover {
+        transform: translate(-5px, -5px);
+    }
+}
