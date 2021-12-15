@@ -1,7 +1,7 @@
 import "./ItemListContainer.scss";
 
 import React, { useEffect, useState } from "react";
-import { collection, getDocs } from "firebase/firestore/lite";
+import { collection, getDocs, query, where } from "firebase/firestore/lite";
 
 import CircularProgress from "react-cssfx-loading/lib/CircularProgress";
 import ItemList from "../ItemList/ItemList";
@@ -9,7 +9,7 @@ import db from "../../../db";
 
 const getProducts = () => {
     const res = collection(db, "items");
-    return getDocs(res).then(
+    return getDocs(query(res, where("stock", ">", 0))).then(
         (res) =>
             res.docs.map((doc) => {
                 return {
