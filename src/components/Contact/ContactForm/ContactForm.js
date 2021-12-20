@@ -1,7 +1,7 @@
 import * as Yup from "yup";
 
 import React, { useState } from "react";
-import { Timestamp, addDoc, collection, documentId, getDocs, query, where, writeBatch } from "firebase/firestore/lite";
+import { Timestamp, addDoc, collection } from "firebase/firestore/lite";
 
 import CustomButton from "../../GlobalComponents/CustomButton/CustomButton";
 import { Formik } from "formik";
@@ -50,9 +50,12 @@ const ContactForm = () => {
             }}
         >
             {(formik) => (
-                <form onSubmit={formik.handleSubmit} class="form-contacto d-flex flex-column justify-content-center">
-                    <div class="mb-3 input-group-lg">
-                        <label for="name" class="form-label">
+                <form
+                    onSubmit={formik.handleSubmit}
+                    className="form-contacto d-flex flex-column justify-content-center"
+                >
+                    <div className="mb-3 input-group-lg">
+                        <label for="name" className="form-label">
                             Nombre
                         </label>
                         <input
@@ -66,8 +69,8 @@ const ContactForm = () => {
 
                     {formik.errors.name && <p className="alert alert-danger">{formik.errors.name}</p>}
 
-                    <div class="mb-3 input-group-lg">
-                        <label for="inputLastName" class="form-label">
+                    <div className="mb-3 input-group-lg">
+                        <label for="inputLastName" className="form-label">
                             Apellido
                         </label>
                         <input
@@ -80,8 +83,8 @@ const ContactForm = () => {
                     </div>
 
                     {formik.errors.surname && <p className="alert alert-danger">{formik.errors.surname}</p>}
-                    <div class="mb-3 input-group-lg">
-                        <label for="email" class="form-label">
+                    <div className="mb-3 input-group-lg">
+                        <label for="email" className="form-label">
                             Email
                         </label>
                         <input
@@ -93,8 +96,8 @@ const ContactForm = () => {
                         />
                     </div>
                     {formik.errors.email && <p className="alert alert-danger">{formik.errors.email}</p>}
-                    <div class="mb-3 input-group-lg">
-                        <label for="inputText" class="form-label">
+                    <div className="mb-3 input-group-lg">
+                        <label for="inputText" className="form-label">
                             Descripción
                         </label>
                         <textarea

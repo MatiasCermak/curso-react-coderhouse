@@ -4,12 +4,12 @@ import React from "react";
 
 const Banner = () => {
     return (
-        <div class="banner d-flex flex-wrap">
-            <div id="carouselExampleControls" class="carousel slide w-100 carousel-fade" data-bs-ride="carousel">
-                <div class="carousel-inner w-100">
-                    <div class="carousel-item w-100 active" data-bs-interval="2000">
+        <div className="banner d-flex flex-wrap">
+            <div id="carouselExampleControls" className="carousel slide w-100 carousel-fade" data-bs-ride="carousel">
+                <div className="carousel-inner w-100">
+                    <div className="carousel-item w-100 active" data-bs-interval="2000">
                         <div
-                            class="
+                            className="
                                     d-flex
                                     carousel-item__image
                                     w-100
@@ -21,9 +21,9 @@ const Banner = () => {
                             <p>Esos grandes momentos</p>
                         </div>
                     </div>
-                    <div class="carousel-item" data-bs-interval="2000">
+                    <div className="carousel-item" data-bs-interval="2000">
                         <div
-                            class="
+                            className="
                                     d-flex
                                     carousel-item__image
                                     w-100
@@ -35,9 +35,9 @@ const Banner = () => {
                             <p>Vivilos otra vez</p>
                         </div>
                     </div>
-                    <div class="carousel-item" data-bs-interval="2000">
+                    <div className="carousel-item" data-bs-interval="2000">
                         <div
-                            class="
+                            className="
                                     d-flex
                                     carousel-item__image
                                     w-100

@@ -1,7 +1,7 @@
 import * as Yup from "yup";
 
 import React, { useState } from "react";
-import { Timestamp, addDoc, collection, documentId, getDocs, query, where, writeBatch } from "firebase/firestore/lite";
+import { Timestamp, addDoc, collection } from "firebase/firestore/lite";
 
 import CustomButton from "../../GlobalComponents/CustomButton/CustomButton";
 import { Formik } from "formik";
@@ -45,8 +45,8 @@ const HelpForm = () => {
         );
     };
     return (
-        <section class="main_help__form d-flex flex-column align-items-center">
-            <h2 class="form__title title">Formulario de Ayuda</h2>
+        <section className="main_help__form d-flex flex-column align-items-center">
+            <h2 className="form__title title">Formulario de Ayuda</h2>
             <Formik
                 initialValues={{ name: "", surname: "", email: "", category: 0, urgency: false }}
                 validationSchema={schema}
@@ -57,10 +57,10 @@ const HelpForm = () => {
                 {(formik) => (
                     <form
                         onSubmit={formik.handleSubmit}
-                        class="form-contacto d-flex flex-column justify-content-center"
+                        className="form-contacto d-flex flex-column justify-content-center"
                     >
-                        <div class="mb-3 input-group-lg">
-                            <label for="name" class="form-label">
+                        <div className="mb-3 input-group-lg">
+                            <label for="name" className="form-label">
                                 Nombre
                             </label>
                             <input
@@ -74,8 +74,8 @@ const HelpForm = () => {
 
                         {formik.errors.name && <p className="alert alert-danger">{formik.errors.name}</p>}
 
-                        <div class="mb-3 input-group-lg">
-                            <label for="inputLastName" class="form-label">
+                        <div className="mb-3 input-group-lg">
+                            <label for="inputLastName" className="form-label">
                                 Apellido
                             </label>
                             <input
@@ -88,8 +88,8 @@ const HelpForm = () => {
                         </div>
 
                         {formik.errors.surname && <p className="alert alert-danger">{formik.errors.surname}</p>}
-                        <div class="mb-3 input-group-lg">
-                            <label for="email" class="form-label">
+                        <div className="mb-3 input-group-lg">
+                            <label for="email" className="form-label">
                                 Email
                             </label>
                             <input
@@ -102,12 +102,12 @@ const HelpForm = () => {
                         </div>
                         {formik.errors.email && <p className="alert alert-danger">{formik.errors.email}</p>}
                         <div>
-                            <label for="categorySelect" class="form-label">
+                            <label for="categorySelect" className="form-label">
                                 Categoría
                             </label>
                             <select
                                 value={formik.values.category}
-                                class="form-select form-select-lg mb-3"
+                                className="form-select form-select-lg mb-3"
                                 id="categorySelect"
                                 aria-label="form-select-lg example"
                             >
@@ -120,14 +120,14 @@ const HelpForm = () => {
                             </select>
                         </div>
                         {formik.errors.email && <p className="alert alert-danger">{formik.errors.category}</p>}
-                        <div class="form-check">
+                        <div className="form-check">
                             <input
-                                class="form-check-input"
+                                className="form-check-input"
                                 type="checkbox"
                                 value={formik.values.urgency}
                                 id="helpCheck"
                             />
-                            <label class="form-check-label" for="helpCheck">
+                            <label className="form-check-label" for="helpCheck">
                                 Urgente
                             </label>
                         </div>

@@ -5,9 +5,9 @@ import React from "react";
 
 const Contact = () => {
     return (
-        <main class="main_contact">
-            <h2 class="form-contacto-title">Formulario de Contacto</h2>
-            <div class="form_contact__body">
+        <main className="main_contact">
+            <h2 className="form-contacto-title">Formulario de Contacto</h2>
+            <div className="form_contact__body">
                 <ContactForm />
             </div>
         </main>

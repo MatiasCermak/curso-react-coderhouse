@@ -19,20 +19,20 @@ const ItemDetail = ({ item }) => {
         if (quantityToAdd !== 0) addItem({ item: item, quantity: quantityToAdd });
     };
     return (
-        <div class="main_product__container container-fluid">
-            <div class="row">
+        <div className="main_product__container container-fluid">
+            <div className="row">
                 <h1>{item.title}</h1>
             </div>
-            <div class="row">
-                <div class="col-xs-12 col-xl-6">
+            <div className="row">
+                <div className="col-xs-12 col-xl-6">
                     <Popover text={`Album ${item.title}`}>
                         <PopoverTrigger>
                             <img src={require("../../../img/" + item.image).default} alt="Foto album" />{" "}
                         </PopoverTrigger>
                     </Popover>
                 </div>
-                <div class="product_data col col-xs-12 col-xl-6 d-flex flex-column justify-content-center">
-                    <div class="product_data__characteristics d-flex flex-column">
+                <div className="product_data col col-xs-12 col-xl-6 d-flex flex-column justify-content-center">
+                    <div className="product_data__characteristics d-flex flex-column">
                         <h4>Características</h4>
                         <ul>
                             <li>Año: 1975</li>
@@ -42,11 +42,11 @@ const ItemDetail = ({ item }) => {
                             <li>Precio: {item.price}</li>
                         </ul>
                     </div>
-                    <div class="product_data__description">
+                    <div className="product_data__description">
                         <h4>Descripción</h4>
                         <p>{item.description}</p>
                     </div>
-                    <div class="product_data__buttons d-flex flex-column align-items-center justify-content-center">
+                    <div className="product_data__buttons d-flex flex-column align-items-center justify-content-center">
                         {itemQuantity !== 0 ? (
                             <CustomButton text="Comprar" to="/cart" handleClick={handleAdd} />
                         ) : (

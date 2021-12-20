@@ -4,9 +4,9 @@ import React from "react";
 
 const About = () => {
     return (
-        <main class="about-container">
-            <h1 class="about-title">Conocenos!</h1>
-            <section class="about">
+        <main className="about-container">
+            <h1 className="about-title">Conocenos!</h1>
+            <section className="about">
                 <h1>Nuestra Misión</h1>
                 <p>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, perferendis blanditiis fugit quas
@@ -16,7 +16,7 @@ const About = () => {
                     beatae quas quibusdam est ipsam quidem eos!
                 </p>
             </section>
-            <section class="about">
+            <section className="about">
                 <h1>Nuestra Visión</h1>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro maxime dolore rerum velit totam
@@ -26,7 +26,7 @@ const About = () => {
                     illum necessitatibus voluptate voluptas impedit dolorem, error, nulla cum.
                 </p>
             </section>
-            <section class="about">
+            <section className="about">
                 <h1>Nuestros Valores</h1>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis ut quo officiis dolorum nostrum

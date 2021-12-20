@@ -31,7 +31,7 @@ const ItemListContainer = () => {
     }, []);
 
     return (
-        <section class="d-flex flex-wrap align-items-center justify-content-center row-cols-xl-6 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 product-list">
+        <section className="d-flex flex-wrap align-items-center justify-content-center row-cols-xl-6 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 product-list">
             {productList ? <ItemList products={productList} /> : <CircularProgress color="#f98948" />}
         </section>
     );
